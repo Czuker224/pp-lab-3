@@ -1,3 +1,6 @@
+import geometry.Circle;
+import geometry.Point;
+
 public class Main {
     public static void main(String[] args) {
         // Tworzenie obiektu klasy Point i inicjacja wartościami
@@ -7,7 +10,7 @@ public class Main {
         double x = point.getX();
         double y = point.getY();
 
-        System.out.println("Współrzędne punktu:");
+        System.out.println("wspolrzedne punktu:");
         System.out.println("x = " + x);
         System.out.println("y = " + y);
 
@@ -19,8 +22,24 @@ public class Main {
         x = point.getX();
         y = point.getY();
 
-        System.out.println("\nNowe współrzędne punktu:");
+        System.out.println("\nNowe wspolrzedne punktu:");
         System.out.println("x = " + x);
         System.out.println("y = " + y);
+
+
+        /* Wyświetlenie właściwości klasy Circle */
+            // Tworzenie obiektu klasy Point (środek koła)
+            Point center = new Point(3.0, 4.0);
+
+            // Tworzenie obiektu klasy Circle
+            Circle circle = new Circle(center, 5.0);
+
+            // Wyświetlanie właściwości koła
+        System.out.println("\n\nWlasciwosci kola:");
+            System.out.println("Srodek kola: (" + circle.getCenter().getX() + ", " + circle.getCenter().getY() + ")");
+            System.out.println("Promien kola: " + circle.getRadius());
+            System.out.println("Obwod kola: " + circle.calculatePerimeter());
+            System.out.println("Pole powierzchni kola: " + circle.getArea());
+
     }
 }

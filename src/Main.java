@@ -1,6 +1,7 @@
 import geometry.Circle;
 import geometry.Point;
 import geometry.ColoredCircle;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,5 +54,36 @@ public class Main {
             System.out.println("Obwod kola: " + coloredCircle.calculatePerimeter());
             System.out.println("Kolor kola: " + coloredCircle.getColor());
             System.out.println("Pole powierzchni kola: " + coloredCircle.getArea());
+
+
+        // Tworzenie tablicy obiektów Circle i ColoredCircle
+        Circle[] circles = new Circle[10]; // rozmiaru tablicy = 10 elementów
+
+        // Uzupełnienie tablicy kolejnymi obiektami Circle
+        int i;
+        for (i = 0; i < 6; i++) {
+            circles[i] = new Circle(new Point(i, i + 1), i + 2);
+        }
+        // Uzupełnienie tablicy kolejnymi obiektami ColoredCircle
+        for (i = 6; i < 10; i++) {
+            circles[i] = new ColoredCircle(new Point(i, i + 1), i + 2, "green");
+        }
+
+        //wyświetlanie danych z tablicy circles
+        System.out.println();
+        for (i = 0; i < circles.length; i++) {
+            if (circles[i] != null) { // Sprawdzenie czy element tablicy nie jest pusty
+                String msg = "Obszar kola " + (i + 1) + ": " + circles[i].getArea();
+                // Sprawdzenie czy obiekt jest instancją ColoredCircle
+                if (circles[i] instanceof ColoredCircle) {
+                    ColoredCircle coloredCircleFromArray = (ColoredCircle) circles[i];
+                    msg = msg + " ( Kolor: " + coloredCircleFromArray.getColor() + " )";
+                }
+                System.out.println(msg);
+            }
+        }
+
+
     }
+
 }

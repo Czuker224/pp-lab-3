@@ -3,6 +3,7 @@ import geometry.Point;
 import geometry.ColoredCircle;
 import java.util.Random;
 import geometry.Rectangle;
+import geometry.Square;
 
 public class Main {
     public static void main(String[] args) {
@@ -92,7 +93,13 @@ public class Main {
         System.out.println("Pole prostokata: " + rectangle.calculateArea());
         System.out.println("Obwod prostokata: " + rectangle.calculatePerimeter());
 
+        // Tworzenie obiektu klasy Square (kwadrat) o boku 4.0
+        Square square = new Square(4.0);
 
+        // Wyświetlanie właściwości kwadratu
+        System.out.println();
+        System.out.println("Pole kwadratu: " + square.calculateArea());
+        System.out.println("Obwod kwadratu: " + square.calculatePerimeter());
 
 
     }

@@ -2,6 +2,7 @@ import geometry.Circle;
 import geometry.Point;
 import geometry.ColoredCircle;
 import java.util.Random;
+import geometry.Rectangle;
 
 public class Main {
     public static void main(String[] args) {
@@ -82,6 +83,16 @@ public class Main {
                 System.out.println(msg);
             }
         }
+
+        // Tworzenie obiektu klasy Rectangle
+        Rectangle rectangle = new Rectangle(5.0, 3.0);
+
+        // Wyświetlanie właściwości prostokąta
+        System.out.println();
+        System.out.println("Pole prostokata: " + rectangle.calculateArea());
+        System.out.println("Obwod prostokata: " + rectangle.calculatePerimeter());
+
+
 
 
     }
